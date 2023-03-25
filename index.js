@@ -4,7 +4,7 @@ const fs = require('fs');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const inserttHTML = require('./src/htmlCreator');
+const insertHTML = require('./src/htmlCreator');
 
 const Questions = async () => {
   const teamArray = [];
