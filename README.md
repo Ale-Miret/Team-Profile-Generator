@@ -19,4 +19,4 @@ npm run test
 ```
 
 ## Walkthrough Video
-[Untitled_ Mar 25, 2023 10_19 AM.webm](https://user-images.githubusercontent.com/112821785/227723015-5f706451-4f99-4a08-80f7-cec10c910eb6.webm)
+
