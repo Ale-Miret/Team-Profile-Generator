@@ -1,20 +1,19 @@
 const { createEngineer, createIntern, createManager, createEmployeesPage } = require('./html-temp');
 
-const injectHTML = (data) => {
+const insertHTML = (employees) => {
     const roleCreator = {
-        Manager: createManager,
-        Engineer: createEngineer,
-        Intern: createIntern,
+      Manager: createManager,
+      Engineer: createEngineer,
+      Intern: createIntern,
     };
 
-    const createCards = data.map(employee => {
-        const createEmployeeRole = employee.getRole();
-        const cardCreator = roleCreator[createEmployeeRole];
+    const cards = employees.map(({ getRole, ...employee }) => {
+        const cardCreator = roleCreator[getRole()];
         return cardCreator(employee);
-    }).join('');
-
+      }).join('');
+    
     const createEmployees = createEmployeesPage(createCards);
     return createEmployees;
 };
 
-module.exports = injectHTML;
+module.exports = insertHTML;
