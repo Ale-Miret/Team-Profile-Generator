@@ -1,27 +1,20 @@
-// Import necessary functions
 const { createEngineer, createIntern, createManager, createEmployeesPage } = require('./html-temp');
 
-
-// Define function to insert HTML
-const insertHTML = (employees) => {
-    // Create object to map role to corresponding card creator function
+const insertHTML = (data) => {
     const roleCreator = {
-      Manager: createManager,
-      Engineer: createEngineer,
-      Intern: createIntern,
+        Manager: createManager,
+        Engineer: createEngineer,
+        Intern: createIntern,
     };
 
-// Map employees to their corresponding card creator function and join the results into a single string of HTML cards
-const cards = employees.map(({ getRole, ...employee }) => {
-        const cardCreator = roleCreator[getRole()];
+    const renderCards = data.map(employee => {
+        const createRole = employee.getRole();
+        const cardCreator = roleCreator[createRole];
         return cardCreator(employee);
-      }).join('');
-    
+    }).join('');
 
-// Create HTML page using the createEmployeesPage function and the HTML cards
-const createEmployees = createEmployeesPage(createCards);
+    const createEmployees = createEmployeesPage(renderCards);
     return createEmployees;
 };
 
-// Export the insertHTML function
 module.exports = insertHTML;
