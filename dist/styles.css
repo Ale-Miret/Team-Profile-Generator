@@ -19,5 +19,41 @@ background: url(https://images.pexels.com/photos/7135019/pexels-photo-7135019.jp
    
   }
 
+  .wholeCard {
+    margin: 10px;
+  }
+  
+  .card {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-right: 50px;
+  }
+  
+  .card-header {
+    background-color: #0077B6;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .text-bg-primary {
+    background-color: #0077B6;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .head-text {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
   
   

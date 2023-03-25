@@ -1,8 +1,10 @@
 function createCard(employee) {
+    // Create header with employee name
     const header = `<div class="card-header text-bg-primary"><h3>${employee.name}</h3></div>`;
     let body = "";
   
     switch (employee.role) {
+        // Create body section based on employee role
       case "Manager":
         body = `<p>ID: ${employee.id}</p><p>Email: <a href="mailto:${employee.email}">${employee.email}</a></p><p>Office Number: ${employee.officeNumber}</p>`;
         break;
@@ -16,6 +18,7 @@ function createCard(employee) {
         break;
     }
   
+    // Return a card div containing the header and body sections
     return `
       <div class="col-4 mt-4 wholeCard">
         <div class="card h-100">
@@ -29,8 +32,10 @@ function createCard(employee) {
   }
   
   function createEmployeesPage(employeeArray) {
+    // Map over the employee array to create an array of card divs
     const cards = employeeArray.map(employee => createCard(employee)).join("");
     
+    // Return an HTML page containing the cards array
     return `
       <!DOCTYPE html>
       <html lang="en">
@@ -47,7 +52,7 @@ function createCard(employee) {
         <header>
           <h1 class="head-text">Employees</h1>
         </header>
-        <div class="container">
+        <div class="container card-container">
           <div class="row">
             ${cards}
           </div>
