@@ -51,7 +51,6 @@ const createIntern = (intern) => `
 
 // This function takes in a function for creating employee cards, and returns an HTML page with the cards created by that function
 function createEmployeesPage(cardCreator) {
-function createEmployeesPage(cardCreator) {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
